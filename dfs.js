@@ -1,5 +1,5 @@
 /* global console */
-var findNodeBFS = function(node, data) {
+var findNodeDFS = function(node, data) {
 	'use strict';
 
 	var found = null;
@@ -22,7 +22,7 @@ var findNodeBFS = function(node, data) {
 	if (node.children && node.children.length > 0) {
 		var i;
 		for (i = 0; i < node.children.length; i++) {
-			found = findNodeBFS(node.children[i], data);
+			found = findNodeDFS(node.children[i], data);
 			if (found) {
 				break;
 			}
@@ -42,7 +42,7 @@ var node = {
 	}]
 };
 
-var found =  findNodeBFS(node, "Parent2");
+var found =  findNodeDFS(node, "Parent2");
 
 if (found) {
 	console.log("Found :" + found.data);
